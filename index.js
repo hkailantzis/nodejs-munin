@@ -5,7 +5,7 @@
 module.exports = function(config) {
   if (typeof config === 'undefined') throw new Error("Need to pass configuration to munin-catcher");
   
-  var stats = require('./lib/munin-stats')();
+  var stats = require('./lib/munin-stats');
 
   stats.server = require('./lib/munin-server')(config, stats);
   
