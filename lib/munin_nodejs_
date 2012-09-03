@@ -87,6 +87,7 @@ var requestGraph = function(relativeUrl, callback) {
 // @see http://munin-monitoring.org/wiki/ConcisePlugins#suggest
 // this seems to depend on 'autoconf' which isn't implemented here yet, not sure if this is useful
 if (mode === 'suggest') {
+  // /graphs corresponds w/ statsHandler.getGraphKeys()
   requestGraph('/graphs', function requestCallback(error, graphs) {
     if (error) {
       console.error(error.message);
@@ -121,7 +122,7 @@ else {
     process.exit(1);
   }
   
-  
+  // corresponds w/ statsHandler.dumpMuninStats(req.params.graphKey, reset)
   requestGraph('/' + graphName + (mode !== 'config' ? '?reset=1' : ''), function requestCallback (error, graph) {
     if (error) {
       console.error(error.message);
