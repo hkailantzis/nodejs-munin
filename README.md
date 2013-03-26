@@ -6,14 +6,21 @@ Allows node.js apps to collect stats and report them on-demand to a [Munin](http
 
 Inspired by [StatsD](https://github.com/etsy/statsd). StatsD uses Graphite, but I had an existing Munin-based graph infrastructure, so this works with Munin.
 
-Still under development. Code was copied from a site where it's used in production, but is not yet generic enough for common use.
-
-Example [munin plugin](http://munin.readthedocs.org/en/latest/plugin/use.html#configuring) configuration:
-```
-[munin_nodejs_*]
-env.statsHost 127.0.0.1
-env.statsPort 8082
-env.statsPath /stats
-```
-
 By [Ben Buckman, New Leaf Digital](http://newleafdigital.com)
+
+Installation
+============
+
+For the most fresh versions you may want to use:
+```sh
+npm install git://github.com/newleafdigital/nodejs-munin.git
+```
+
+Latest stable version can be installed using:
+```sh
+npm install munin
+```
+
+Example
+=======
+Uptime example is in the [example](https://github.com/newleafdigital/nodejs-munin/tree/master/example) directory.
