@@ -54,8 +54,7 @@ var request = require('request');
 
 // @todo need a better way to pull in host.
 // @todo also support sockets
-var otherAppConf = require('../../lib/config');
-var statsHost = 'http://' + otherAppConf.statsHost + ':' + otherAppConf.statsPort + otherAppConf.statsPath;
+var statsHost = 'http://' + process.env.statsHost + ':' + process.env.statsPort + process.env.statsPath;
 
 
 // common request() runner
